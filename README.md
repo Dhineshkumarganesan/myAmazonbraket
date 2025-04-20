@@ -315,12 +315,17 @@ Building with PennyLane
 For more information about using PennyLane with Braket, see the following resources:
 
 Combining PennyLane with Amazon Braket(opens in a new tab)
+https://github.com/aws/amazon-braket-examples/blob/main/examples/pennylane/0_Getting_started/0_Getting_started.ipynb
 
 Creating a Bridge between Machine Learning and Quantum Computing with PennyLane(opens in a new tab)
-
+https://aws.amazon.com/blogs/opensource/creating-a-bridge-between-machine-learning-and-quantum-computing-with-pennylane/
 
 Building with Qiskit
 For more information about using Qiskit with Braket, see the following resources:
 
 How to Run Qiskit on Amazon Braket(opens in a new tab)(opens in a new tab)
+https://github.com/aws/amazon-braket-examples/blob/main/examples/qiskit/0_Getting_Started.ipynb
+
 Introducing the Qiskit Provider for Amazon Braket
+https://aws.amazon.com/blogs/quantum-computing/introducing-the-qiskit-provider-for-amazon-braket/
+
