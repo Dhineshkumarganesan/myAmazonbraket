@@ -135,3 +135,22 @@ An IAM policy is a document that grants or denies permissions to AWS services an
 Best practice: Follow the security principle of least privilege when granting permissions. By following this principle, you help prevent users or roles from having more permissions than needed to perform their tasks. For example, if an employee needs access to only one bucket, specify the bucket in the IAM policy. You do not need to grant the employee access to all the buckets in your AWS account.
 
 
+
+**What programming languages can you use with Amazon Braket?**
+
+To learn more about using programming languages with Braket, expand each of the following five sections.
+
+
+Python SDK
++
+
+PennyLane
++
+
+Qiskit
++
+
+Julia
++
+
+Open Quantum Assembly Language
