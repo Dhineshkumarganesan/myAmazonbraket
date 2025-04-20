@@ -154,3 +154,18 @@ Julia
 +
 
 Open Quantum Assembly Language
+
+
+https://github.com/amazon-braket/amazon-braket-sdk-python
+
+https://pypi.org/project/amazon-braket-sdk/
+
+https://docs.pennylane.ai/en/stable/
+
+https://aws.amazon.com/blogs/quantum-computing/introducing-the-qiskit-provider-for-amazon-braket/
+
+https://github.com/amazon-braket/Braket.jl
+
+https://docs.aws.amazon.com/braket/latest/developerguide/braket-references.html
+
+
