@@ -169,3 +169,35 @@ https://github.com/amazon-braket/Braket.jl
 https://docs.aws.amazon.com/braket/latest/developerguide/braket-references.html
 
 
+**What is quantum computing?**
+
+Essentially, quantum computing is a new way of processing information that uses quantum coherence and entanglement. It has the potential to solve computational problems beyond the reach of classical computers by using the laws of quantum mechanics.
+
+Quantum computers solve problems fundamentally differently than conventional information processing. Instead of using traditional CPU and memory models, qubits—the building blocks of a quantum computer—are used to store and process quantum information.
+
+While quantum computers have the potential to be disruptive, we are still in the early stages of this technology. Significant scientific and engineering challenges need to be overcome before customers can use quantum computing to address business problems.
+
+
+A new paradigm for computation that uses the laws of quantum physics
+
+
+A way to solve problems in novel ways and access a new class of problems
+
+
+How to build these sensitive devices is a difficult scientific challenge
+
+
+
+Wide interest in possible quantum solutions
+
+You might wonder why a quantum computer can provide speedups for some problems but not for others. A quantum computer has a different model of computation than conventional computers. In this model, there are algorithms that, for certain problems, are exponentially faster than the fastest possible—or fastest known—classical algorithms.
+
+For example, there is no known classical algorithm to perform integer factoring in a reasonable amount of time. This task is known to be efficiently solvable using quantum resources.
+
+Discovering new algorithms where quantum computers are more efficient than their classical counterparts is an active area of research. The original promise of quantum computers came from the famous physicist, Richard Feynman. He postulated that a quantum computer is the best tool for studying certain classes of problems, namely simulating the physics of quantum systems.
+
+
+
+
+https://docs.aws.amazon.com/braket/latest/developerguide/security.html
+
