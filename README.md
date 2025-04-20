@@ -196,8 +196,95 @@ For example, there is no known classical algorithm to perform integer factoring 
 
 Discovering new algorithms where quantum computers are more efficient than their classical counterparts is an active area of research. The original promise of quantum computers came from the famous physicist, Richard Feynman. He postulated that a quantum computer is the best tool for studying certain classes of problems, namely simulating the physics of quantum systems.
 
+**What are the basic technical concepts of Braket?**
+
+Users of Braket should have a basic understanding of the following concepts. To learn more, expand each of the following four categories.
 
 
+
+
+QPU
+A QPU is a physical quantum computing device where you can run a quantum task. Braket provides AWS customers with access to quantum computing technologies from multiple quantum hardware providers. This includes superconducting, trapped ion, and neutral-atom quantum computers. For the most up-to-date information about supported QPUs, see Amazon Braket Supported Devices(opens in a new tab).
+
+
+Device
+In Braket, a device is a QPU or simulator that you can call to run quantum tasks. Braket provides access to QPU devices from quantum hardware providers, on-demand simulators, local simulators, and embedded simulators. For all devices, you can find further device properties, such as device topology, calibration data, and built-in device gate sets, on the Devices tab of the Braket console or by using the Braket API and Braket SDK.
+
+
+Quantum task
+In Braket, a quantum task is the atomic request to a device. For gate-based quantum computing devices, this request includes the quantum circuit plus the measurement instructions, number of shots, and other request metadata. For Analog Hamiltonian Simulation (AHS), the task contains the physical layout of the quantum register and the time dependence and space dependence of the pulse schedule.
+
+You can create quantum tasks through the Amazon Braket SDK or by using the Braket API operation directly. After you create a task, it is queued until the requested device becomes available. You can view your quantum tasks on the Tasks page of the Braket console or by using the GetQuantumTask or SearchQuantumTasks API operations. For more information, see Amazon Braket Terms and Concepts(opens in a new tab) in the Developer Guide and the Amazon Braket API Reference(opens in a new tab).
+
+
+Shots
+Because quantum computing is inherently probabilistic, any circuit needs to be evaluated multiple times to get an accurate result. A single circuit evaluation and measurement is called a shot. The number of shots, or repeated evaluations, for a circuit is based on how accurate you want the result to be.
+
+**How to use Braket**
+
+Braket structures the experience for scientists and developers to explore quantum computing from the ideation stage to running algorithms on quantum devices. Braket provides tools to help you build tasks.
+
+Tasks are standalone requests of a device. Such requests include a quantum circuit or an Analog Hamiltonian Simulation program along with the number of shots to be performed. Braket provides tools to help you build the tasks, test them on simulators, and run them on QPUs.
+
+Many quantum algorithms require interacting over numerous tasks to learn the outcome of the algorithm. Amazon Braket Hybrid Jobs helps run hybrid quantum-classical workloads faster, more efficiently, and more predictably.
 
 https://docs.aws.amazon.com/braket/latest/developerguide/security.html
 
+
+
+**How is Braket used to architect a cloud solution?**
+
+Braket provides on-demand access to quantum computing devices, including on-demand circuit simulators and different types of QPUs. In Braket, the atomic request to a device is a quantum task (the equivalent of a job in the Qiskit framework). 
+
+For gate-based quantum computing devices, this request includes the quantum circuit plus the measurement instructions, number of shots, and other request metadata. For Analog Hamiltonian Simulation, the task contains the physical layout of the quantum register and the time and space dependence of the manipulating fields. A third paradigm for defining tasks uses Braket Pulse to issue analog instructions that control the qubits of the QPU.
+
+To learn more, choose each of the five numbered markers in the following diagram.
+
+Architecture diagram of task flow within Amazon Braket.
+
+![image](https://github.com/user-attachments/assets/72c4f44b-83b4-4fde-800d-d8c56dc0690e)
+
+
+**A Python example** of how to run a two-qubit circuit is as follows. In the code snippet following this diagram, the SDK polls for the results in the background and loads them into the Jupyter notebook, Amazon Braket Hybrid Jobs, or the local environment at task completion.
+
+
+View code example
+# choose the on-demand simulator to run the circuit
+
+from braket.aws import AwsDevice
+
+# or choose the local simulator
+
+from braket.devices import LocalSimulator
+
+from braket.circuits import Circuit, Observable
+
+#device = device = AwsDevice(Devices.Amazon.SV1)
+
+device = LocalSimulator()
+
+# create a circuit with a result type
+
+circ = Circuit().rx(target=0, angle=1).ry(target=1, angle=0.2).cnot(0,2)
+
+# add another result type
+
+circ.probability(target=[0, 2])
+
+# submit the task to run
+
+my_task = device.run(circ, shots=1000)
+
+# get results of the task
+
+result = my_task.result()
+
+print(result.measurement_counts)
+
+**Using examples from the Braket tutorials repository**
+
+The Braket Tutorials GitHub is the primary repository for Braket tutorials. To help you get started, there are tutorials on quantum computing using Braket. There are tutorials for getting started, Braket features, and use cases. For more information, including examples of how to use Braket, see Braket Tutorials(opens in a new tab) on GitHub.
+
+Creating tasks using Qiskit and the Qiskit-Braket provider
+
+You can run algorithms written with a few lines of code in Qiskit, a widely used open source quantum programming SDK. You can run Qiskit code directly on Braket with the Qiskit-Braket provider. 
