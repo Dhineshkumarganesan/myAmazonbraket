@@ -288,3 +288,39 @@ The Braket Tutorials GitHub is the primary repository for Braket tutorials. To h
 Creating tasks using Qiskit and the Qiskit-Braket provider
 
 You can run algorithms written with a few lines of code in Qiskit, a widely used open source quantum programming SDK. You can run Qiskit code directly on Braket with the Qiskit-Braket provider. 
+
+
+
+**Curated resources**
+
+For additional resources on topics related to this lesson, expand each of the following three categories.
+
+
+Building circuits, tasks, and hybrid jobs
+For more information about building circuits, tasks, and hybrid jobs on Braket, see the following resources:
+
+Anatomy of Quantum Circuits and Quantum Tasks in Amazon Braket(opens in a new tab)
+https://github.com/aws/amazon-braket-examples/blob/main/examples/getting_started/3_Deep_dive_into_the_anatomy_of_quantum_circuits/3_Deep_dive_into_the_anatomy_of_quantum_circuits.ipynb
+
+Getting Started with OpenQASM on Braket(opens in a new tab)
+https://github.com/aws/amazon-braket-examples/blob/main/examples/braket_features/Getting_Started_with_OpenQASM_on_Braket.ipynb
+
+Amazon Braket Examples: Braket Features(opens in a new tab)
+https://github.com/aws/amazon-braket-examples/tree/main/examples/braket_features
+
+AWS Open-Sources OQpy to Make It Easier to Write Quantum Programs in OpenQASM 3(opens in a new tab)
+https://aws.amazon.com/blogs/quantum-computing/aws-open-sources-oqpy-to-make-it-easier-to-write-quantum-programs-in-openqasm-3/
+
+Building with PennyLane
+For more information about using PennyLane with Braket, see the following resources:
+
+Combining PennyLane with Amazon Braket(opens in a new tab)
+
+Creating a Bridge between Machine Learning and Quantum Computing with PennyLane(opens in a new tab)
+
+
+Building with Qiskit
+For more information about using Qiskit with Braket, see the following resources:
+
+How to Run Qiskit on Amazon Braket(opens in a new tab)(opens in a new tab)
+Introducing the Qiskit Provider for Amazon Braket
