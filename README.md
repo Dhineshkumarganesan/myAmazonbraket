@@ -19,6 +19,10 @@ https://aws.amazon.com/blogs/quantum-computing/announcing-the-opening-of-the-aws
 https://aws.amazon.com/blogs/quantum-computing/announcing-the-aws-center-for-quantum-networking/
 
 
+https://github.com/amazon-braket/amazon-braket-examples
+
+https://github.com/amazon-braket/amazon-braket-algorithm-library
+
 
 How is Amazon Braket used to architect a cloud solution?
 
