@@ -329,3 +329,76 @@ https://github.com/aws/amazon-braket-examples/blob/main/examples/qiskit/0_Gettin
 Introducing the Qiskit Provider for Amazon Braket
 https://aws.amazon.com/blogs/quantum-computing/introducing-the-qiskit-provider-for-amazon-braket/
 
+
+**Benefits of quantum simulators**
+
+Running on quantum hardware can be resource intensive, so it's important to test applications before running on QPUs. You can use quantum simulators running on classical computers to debug, fine-tune, and experiment with quantum programs before sending the task or job to the QPU.
+
+With simulators, you can test your quantum algorithms at a lower cost because you do not need quantum hardware or access to specific quantum machines. Simulation is a convenient way to troubleshoot and optimize algorithms before progressing to run them on quantum hardware. Classical simulation is also essential to verify the results of near-term quantum computing hardware and study the effects of noise.
+
+Braket gives you access to two types of simulators: local and on-demand simulators.
+
+**Local simulators**
+
+Local simulators run in your local Python environment. For more information, see Preparing a GHZ State and Running the Circuit on Simulators(opens in a new tab) on GitHub.
+https://github.com/aws/amazon-braket-examples/blob/main/examples/getting_started/1_Running_quantum_circuits_on_simulators/1_Running_quantum_circuits_on_simulators.ipynb
+
+When using simulators, consider the following details:
+
+•
+The running time and maximum number of qubits the local simulators can process depends on the Braket notebook instance type or on your local hardware specifications.
+
+•
+The local simulator supports all gates in the Braket SDK, and QPU devices support a smaller subset. You can find the supported gates of a device through Braket on the AWS Management Console. In the navigation pane on the Braket console page, choose Devices. On this page, you can find detailed information about available quantum hardware. To learn more, see the Amazon Braket Devices(opens in a new tab) page in the AWS Console. You will need to sign in to your account to access it.https://console.aws.amazon.com/braket/home/#/devices
+
+
+•
+The local simulator supports advanced Open Quantum Assembly Language (OpenQASM) features, which might not be supported on QPU devices or other simulators. For more information about supported features, see Simulating Advanced OpenQASM Programs with the Local Simulator(opens in a new tab).https://github.com/aws/amazon-braket-examples/blob/main/examples/braket_features/Simulating_Advanced_OpenQASM_Programs_with_the_Local_Simulator.ipynb
+
+
+There are three local simulators available. To learn more, expand each of the following three categories.
+
+
+Local state vector simulator
+The local state vector simulator (braket_sv) is part of the Braket SDK that runs locally in your environment. It is well suited for rapid prototyping on small circuits (up to 25 qubits), depending on the hardware specifications of your Braket notebook instance or your local environment.
+
+
+Local density matrix simulator
+The local density matrix simulator (braket_dm) is part of the Braket SDK that runs locally in your environment. It is well suited for rapid prototyping on small circuits with noise (up to 12 qubits), depending on the hardware specifications of your Braket notebook instance or your local environment.
+
+
+To learn more about the local density matrix simulator, see Simulating Noise on Amazon Braket(opens in a new tab) on GitHub.
+
+
+Local Analog Hamiltonian Simulation (AHS) simulator
+The local AHS simulator (braket_ahs) is part of the Braket SDK that runs locally in your environment. It can be used to simulate results from an AHS program. It is well suited for prototyping on small registers (up to 10–12 atoms), depending on the hardware specifications of your Braket notebook instance or your local environment. The local simulator supports AHS programs with one uniform driving field, one (nonuniform) local detuning field, and arbitrary atom arrangements.https://github.com/aws/amazon-braket-examples/blob/main/examples/braket_features/Simulating_Noise_On_Amazon_Braket.ipynb
+
+
+For more information, see Running Analog Hamiltonian Simulation with Local Simulator(opens in a new tab) on GitHub.https://github.com/amazon-braket/amazon-braket-examples/blob/main/examples/analog_hamiltonian_simulation/05_Running_Analog_Hamiltonian_Simulation_with_local_simulator.ipynb
+
+
+
+**On-demand simulators**
+
+In addition to the local simulators, Braket includes access to fully managed on-demand simulators. All on-demand simulators automatically scale AWS computing resources to deliver high performance processing of your quantum algorithms. The cost of using the Braket on-demand simulators is based on the duration of each simulation task. When you use on-demand simulators, you are billed at a per-minute rate in increments of 1 millisecond for the time your simulation takes to run. There is a minimum billing duration of 3 seconds for each simulation.
+
+You can test and validate your circuits. Braket handles all the underlying software components and Amazon EC2 clusters. This takes away the burden of simulating quantum circuits on classical HPC infrastructure.
+
+There are three on-demand simulators available. To learn more, expand each of the following three categories.
+
+
+State vector simulator (SV1)
+SV1 is an on-demand, high performance, universal state vector simulator. Circuits with all-to-all gates are well suited for SV1. SV1 can return results in various forms, such as a full state vector or an array of amplitudes.
+
+
+Density matrix simulator (DM1)
+DM1 is an on-demand, high performance, density matrix simulator. It can simulate circuits of up to 17 qubits. You can build common noisy circuits from the ground up using gate noise operations, such as bit flip and depolarizing error. You can also apply noise operations to specific qubits and gates of existing circuits that are intended to run with and without noise.
+
+
+Tensor network simulator (TN1)
+TN1 is an on-demand, high performance, tensor network simulator. TN1 can simulate certain circuit types with up to 50 qubits and a circuit depth of 1,000 or smaller. TN1 is particularly powerful for sparse circuits, circuits with local gates, and other circuits with special structure, such as quantum Fourier transform (QFT) circuits.
+
+
+TN1 operates in two phases. First, the rehearsal phase attempts to identify an efficient computational path for your circuit. Then, TN1 can estimate the runtime of the next stage, which is called the contraction phase. If the estimated contraction time exceeds the TN1 simulation runtime limit, TN1 does not attempt contraction.
+
+https://docs.aws.amazon.com/braket/latest/developerguide/braket-devices.html#choose-a-simulator
